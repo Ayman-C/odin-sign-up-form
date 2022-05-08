@@ -6,6 +6,37 @@
     <title>my sign-up form</title>
 </head>
 <body>
-    
+    <div id="banner">
+        <div id="Titlebackground">
+            <div id="logo"></div>
+            <div id="title">XYZen</div>
+        </div>
+        <div id="credits">Photo by Ahmed Saeed on <a href="https://unsplash.com">Unsplash</a></div>
+    </div>
+    <div id="main">
+        <div id="textContainer">
+            <h1>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</h1>
+            <p> you <em>know</em> you want to</p>
+        </div>    
+        <form id="signupForm" action="" method="post">
+            <h2>Let's do this!</h2>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+            <label for="email">EMAIL:</label>
+            <input type="email" id="email" name="email" placeholder="xyz@example.com">
+            <label for="phone">Phone Number:</label>
+            <input type="email" id="phone" name="phone" >
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" >
+            <label for="passwordMatch">Confirm Password:</label>
+            <input type="password" id="passwordMatch" name="passwordMatch" >
+        </form>
+        <button type="submit" form="signupForm" value="Submit"></button>
+        <p>already have an account? <a href="">Log in</a></p>
+
+
+    </div>
 </body>
 </html>

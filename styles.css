@@ -2,7 +2,7 @@ body {
     display:flex;
     flex-direction: row;
     margin: 0 0vh;
-    font-family:'Times New Roman', Times, serif
+    font-family: Helvetica, Arial, sans-serif;
     color: black;
 }
 @font-face {
@@ -19,7 +19,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
-    font-family: "Meditation",Arial, Helvetica, sans-serif;
+    font-family: "Meditation",Helvetica, Arial, sans-serif;
     align-items: center;
     
 }

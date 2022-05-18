@@ -5,6 +5,7 @@
     <meta name="viewport">
     <title>my sign-up form</title>
     <link rel="stylesheet"  href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="banner">
@@ -25,29 +26,29 @@
         <h2>Let's do this!</h2>
         <form id="signupForm" action="" method="post">
             
-            <div class="input">
+            <div class="input-row">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName">
             </div>
-            <div class="input">
+            <div class="input-row">
                 <label for="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName">
             </div>
-            <div class="input">
-                <label for="email">EMAIL:</label>
+            <div class="input-row">
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="xyz@example.com">
             </div>
-            <div class="input">
+            <div class="input-row">
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" >
             </div>
-            <div class="input">
+            <div class="input-row">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" >
             </div>
-            <div class="input">
+            <div class="input-row">
                 <label for="passwordMatch">Confirm Password:</label>
-                <input type="password" id="passwordMatch" name="passwordMatch" >
+                <input type="password" id="passwordMatch" name="passwordMatch">
             </div>
         </form>
         <button type="submit" form="signupForm" value="Submit">Create Account</button>

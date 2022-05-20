@@ -1,22 +1,42 @@
+const formData = new FormData(document.getElementById("signupForm"));
+const pwdElem = document.getElementById("password");
+const pwdMatchElem = document.getElementById("passwordMatch");
+const pwdErrElem = document.createElement("h3");
+ pwdErrElem.textContent = "*Required"
+pwdElem.parentNode.append(pwdErrElem)
 
-
-let formData = new FormData(document.getElementById("signupForm"));
-let passwordElem = document.getElementById("password");
-let passwordMatchElem = document.getElementById("passwordMatch");
-
- 
-passwordElem.addEventListener("keydown", function(target){ 
-    passwordErrorElem.style.visibility=matchCheck(passwordElem.value,passwordMatchElem.value,target.key) ? "hidden" : "visible";
+pwdElem.addEventListener("keyup", function(){ 
+    let errType = formCheck.pwd(pwdElem.value,pwdMatchElem.value)
+    formErr.updateMessage(errType);
+    formErr.displayMessage(errType,pwdErrElem);
  })
-passwordMatchElem.addEventListener("keydown", function(target){passwordErrorElem.style.visibility=matchCheck(passwordMatchElem.value,passwordElem.value,target.key)? "hidden" : "visible";
+pwdMatchElem.addEventListener("keyup", function(){
+    let errType = formCheck.pwd(pwdElem.value,pwdMatchElem.value)
+    formErr.updateMessage(errType);
+    formErr.displayMessage(errType,pwdErrElem);
 })
 
-function matchCheck(passwordOne,passwordTwo,key) {
-    return passwordOne+key === passwordTwo
-}
+const formCheck = ( () => {
+    const pwd = (pwdOne,pwdTwo) => {
+        if (pwdOne==="" && pwdTwo==="") {
+            return [1,"empty"]
+        }
+        if (pwdOne!=pwdTwo) {
+            return [1,"mismatch"];
+        }
+        else {
+            return [0,"none"]
+        } 
+    }
+    return {pwd}
+})()
 
-const passwordErrorElem = document.createElement("h3s");
-passwordErrorElem.innerText="*Passwords do not match";
-
-passwordElem.parentNode.append(passwordErrorElem)
-
+const formErr = ( () => {
+        const errList = {
+            empty:"*Required",
+            mismatch:"*Passwords do not match",
+            none:""}
+        const updateMessage = (errType) => {pwdErrElem.innerText = errList[errType[1]];}
+        const displayMessage = (errType,errElem) => {errElem.style.visibility = errType[0] ? "visible" : "hidden"};
+        return {updateMessage,displayMessage}
+})()

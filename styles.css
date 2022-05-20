@@ -120,3 +120,11 @@ button {
 a {
     color: orange;
 }
+
+h3 {
+    font-size: 4vh;
+    font-weight: 100;
+    color:orange;
+    margin-top:0;
+    margin-bottom: 0vh;
+}
